@@ -302,7 +302,7 @@ func validateHost(h string) error {
 		return fmt.Errorf("invalid host: must be a hostname: %w", err)
 	}
 	if u.Scheme != "" {
-		return errors.New("host must not contain a scheme prefix like https://")
+		return errors.New("host must not contain a scheme prefix like https:// (was '%s')", u.Scheme)
 	}
 	return nil
 }
